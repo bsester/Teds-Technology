@@ -1,0 +1,34 @@
+include layouts/mainLayout
+.container
+    h1.mt-4
+    h1.mt-4 Our Inventory
+    p
+
+    if inventory.length === 0
+        h2 No Phones Available
+    else
+        table.table.table-striped
+            thead
+                tr
+                    th(scope='col') ID
+                    th(scope='col') Sale
+                    th(scope='col') Manufacturer
+                    th(scope='col') Item
+                    th(scope='col') Description
+                    th(scope='col') Availability
+                    th(scope='col') Price
+                    th(scope='col') Colors
+                    th(scope='col') Details
+            tbody
+                each i in inventory
+                    tr
+                        td= i.id
+                        td= i.sale
+                        td= i.manufact
+                        td= i.item
+                        td= i.descr
+                        td= i.avail
+                        td= i.price
+                        td= i.colors
+                        td
+                            a.btn-link(href = `/showDetails${i.id}`) Details
