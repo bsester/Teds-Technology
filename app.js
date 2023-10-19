@@ -17,9 +17,10 @@ app.use( shopRoutes);
 app.get('*', function(req, res){
     // res.status(404).send("<h2> Request not found </h2>")
     //;
-    res.render( 'notFound', {title:"Page Not Found",
-        subTitle: "Try again",
-       });
+    res.render('notFound',
+        {
+            from: ' '
+        });
 })
 
 let port = 3009;
